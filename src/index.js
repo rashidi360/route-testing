@@ -1,28 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'assets/css/App.css';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import AuthLayout from 'layouts/auth';
-import AdminLayout from 'layouts/admin';
-import RtlLayout from 'layouts/rtl';
-import { ChakraProvider } from '@chakra-ui/react';
-import theme from 'theme/theme';
-import { ThemeEditorProvider } from '@hypertheme-editor/chakra-ui';
+import { ChakraProvider } from "@chakra-ui/react";
+import "assets/css/App.css";
+import AdminLayout from "layouts/admin";
+import AuthLayout from "layouts/auth";
+import RtlLayout from "layouts/rtl";
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import theme from "theme/theme";
 
 ReactDOM.render(
-	<ChakraProvider theme={theme}>
-		<React.StrictMode>
-			{/* <ThemeEditorProvider> */}
-				<BrowserRouter>
-					<Routes>
-						<Route path={`auth`} element={<AuthLayout />} />
-						<Route path={`admin`} element={<AdminLayout />} />
-						<Route path={`rtl`} element={<RtlLayout />} />
-						<Route path='/' render={() => <Redirect to='admin' />}  />
-					</Routes>
-				</BrowserRouter>
-			{/* </ThemeEditorProvider> */}
-		</React.StrictMode>
-	</ChakraProvider>,
-	document.getElementById('root')
+  <ChakraProvider theme={theme}>
+    <React.StrictMode>
+      <BrowserRouter>
+        <Routes>
+          <Route path={`auth`} element={<AuthLayout />} />
+          <Route path={`admin`} element={<AdminLayout />} />
+          <Route path={`rtl`} element={<RtlLayout />} />
+          <Route path="/" element={<Navigate to="admin" />} />
+        </Routes>
+      </BrowserRouter>
+    </React.StrictMode>
+  </ChakraProvider>,
+  document.getElementById("root")
 );
