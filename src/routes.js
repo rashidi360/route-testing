@@ -28,15 +28,15 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const routes = [
   {
     name: "Main Dashboard",
-    layout: "admin",
-    path: "default",
+    layout: "/admin",
+    path: "/default",
     icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
     element: <MainDashboard />,
   },
   {
     name: "NFT Marketplace",
-    layout: "admin",
-    path: "nft-marketplace",
+    layout: "/admin",
+    path: "/nft-marketplace",
     icon: (
       <Icon
         as={MdOutlineShoppingCart}
@@ -50,34 +50,35 @@ const routes = [
   },
   {
     name: "Data Tables",
-    layout: "admin",
+    layout: "/admin",
     icon: <Icon as={MdBarChart} width="20px" height="20px" color="inherit" />,
-    path: "data-tables",
+    path: "/data-tables",
     element: <DataTables />,
   },
   {
     name: "Profile",
-    layout: "admin",
-    path: "profile",
+    layout: "/admin",
+    path: "/profile",
     icon: <Icon as={MdPerson} width="20px" height="20px" color="inherit" />,
     element: <Profile />,
   },
   {
     name: "Sign In",
-    layout: "auth",
-    path: "sign-in",
+    layout: "/auth",
+    path: "/sign-in",
     icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
     element: <SignInCentered />,
   },
   {
     name: "RTL Admin",
-    layout: "rtl",
-    path: "rtl-default",
+    layout: "/rtl",
+    path: "/rtl-default",
     icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
     element: <RTL />,
   },
 ];
 
+export default routes;
 // const routes = createBrowserRouter([
 //   {
 //     name: "Auth",
@@ -159,4 +160,3 @@ const routes = [
 //     <RouterProvider router={routes} />
 //   </React.StrictMode>
 // );
-export default routes;
